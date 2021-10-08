@@ -1,0 +1,3 @@
+# Files to ignore while building Docker image for the app
+__pycache*
+crowd_counter.db

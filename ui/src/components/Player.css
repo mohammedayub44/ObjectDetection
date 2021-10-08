@@ -1,0 +1,85 @@
+
+
+#logo {
+  float: right;
+  width: 360px;
+  height: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  background: #3377FF;
+  background-color: #3377FF;
+  left: 50%;
+  
+}
+
+h2 {
+  text-align: center
+}
+
+.title {
+    background-color: #3377FF;
+    color: #FFE033;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+.quadrant {
+  width: 100%;
+  color: burlywood;
+}
+.navbar{
+  background-color: #3377FF;
+  color: #FFE033;
+}
+.content {
+    width: 75%
+}
+ 
+.header  {
+  position: relative;
+  
+
+}
+
+
+input[type=text] {
+   width: 25%;
+}
+
+Button {
+  padding: 1rem 1.5rem;
+}
+
+
+.btn-control {
+background-color: #3377FF;
+color: #FFE033;
+}
+
+.btn-lg {
+padding: 1rem 1.5rem;
+font-size: 1.5rem;
+}
+
+
+
+.themed-container {
+    display: flex;
+    background-color:rgb(251, 255, 200);
+    justify-content: center;
+
+}
+
+.results {
+  padding: 5px;
+  background-color: yellow
+}
+
+#content {
+  justify-content: left;
+}

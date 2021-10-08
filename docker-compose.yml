@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  backend:
+    build: 
+      context: ./
+      dockerfile: ./service/Dockerfile
+    network_mode: "host"
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    environment:
+      - FLASK_DEBUG=1
+  frontend:
+    tty: true
+    build:
+      context: ./
+      dockerfile: ./ui/Dockerfile
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./ui/public:/usr/src/app/public
+      - ./ui/src:/usr/src/app/src
+    links:
+      - "backend:backend"

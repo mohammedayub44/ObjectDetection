@@ -1,0 +1,667 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file Crowd Counter that goes with Server Code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /video:
+    get:
+      operationId: video.read_all
+      tags:
+        - Video
+      summary: Read all videos present sorted by Name
+      description: Read all videos present sorted by Name
+      responses:
+        200:
+          description: Successfully read video set operation
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the video
+                url:
+                  type: string
+                  description: URL of the video
+                duration:
+                  type: string
+                  description: Total Duration of the video
+                area:
+                  type: string
+                  description: In-scene area of the Video
+                units:
+                  type: string
+                  description: metric for in-scene video area
+                threshold:
+                  type: string
+                  description: NFPA Calculated max value for provided occupancy and video area
+                date_created:
+                  type: string
+                  description: Creation timestamp of the Video
+                last_updated:
+                  type: string
+                  description: Last Updated timestamp of the Video
+                vid_load_ref:
+                  type: integer
+                  description: Occupancy type id linked to this video 
+
+    post:
+      operationId: video.create
+      tags:
+        - Video
+      summary: Create a video
+      description: Create a new video
+      parameters:
+        - name: video
+          in: body
+          description: Video to create
+          required: True
+          schema:
+            type: object
+            required:
+              - url
+              - vid_load_ref
+            properties:
+              url:
+                type: string
+                description: URL of the video to create
+              duration:
+                type: string
+                description: Total Duration of the video
+              area:
+                type: string
+                description: In-scene area of the video 
+              units:
+                type: string
+                description: metric for in-scene video area
+              threshold:
+                type: string
+                description: NFPA Calculated max value for provided occupancy and video area
+              date_created:
+                type: string
+                description: Creation Timestamp of the video
+              last_updated:
+                type: string
+                description: Last Updated timestamp of the Video
+              vid_load_ref:
+                type: integer
+                description: Occupancy type id linked to this video 
+      responses:
+        201:
+          description: Successfully created video
+          schema:
+            properties:
+              id:
+                type: string
+                description: Id of the video
+              url:
+                type: string
+                description: URL of the video
+              duration:
+                type: string
+                description: Total Duration of the video
+              area:
+                type: string
+                description: In-scene area of the video
+              units:
+                type: string
+                description: metric for in-scene video area
+              threshold:
+                type: string
+                description: NFPA Calculated max value for provided occupancy and video area
+              date_created:
+                type: string
+                description: Creation Timestamp of the video
+              last_updated:
+                  type: string
+                  description: Last Updated timestamp of the Video
+              vid_load_ref:
+                  type: integer
+                  description: Occupancy type id linked to this video 
+
+  /video/{video_id}:
+    get:
+      operationId: video.read_one
+      tags:
+        - Video
+      summary: Read details of one video
+      description: Read details of one video
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video to get fetch
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read video from data
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Id of the video
+              url:
+                type: string
+                description: URL of the video
+              duration:
+                type: string
+                description: Total Duration of the video
+              area:
+                type: string
+                description: In-scene area of the video
+              units:
+                type: string
+                description: metric for in-scene video area
+              threshold:
+                type: string
+                description: NFPA Calculated max value for provided occupancy and video area
+              date_created:
+                type: string
+                description: Creation Timestamp of the video
+              last_updated:
+                type: string
+                description: Last Updated timestamp of the Video
+              vid_load_ref:
+                type: integer
+                description: Occupancy type id linked to this video 
+    put:
+      operationId: video.update
+      tags:
+        - Video
+      summary: Update a video
+      description: Update a video
+      parameters:
+        - name: video_id
+          in: path
+          description: Id the video to update
+          type: integer
+          required: True
+        - name: video
+          in: body
+          schema:
+            type: object
+            required:
+              - id
+              - url
+              - vid_load_ref
+            properties:
+              id:
+                type: integer
+                description: ID of the video
+              url:
+                type: string
+                description: URL of the video
+              duration:
+                type: string
+                description: Total Duration of the video
+              area:
+                type: string
+                description: In-scene area of the video
+              units:
+                type: string
+                description: metric for in-scene video area
+              threshold:
+                type: string
+                description: NFPA Calculated max value for provided occupancy and video area
+              date_created:
+                type: string
+                description: Creation Timestamp of the video
+              last_updated:
+                type: string
+                description: Last Updated timestamp of the Video
+              vid_load_ref:
+                type: integer
+                description: Occupancy type id linked to this video 
+      responses:
+        200:
+          description: Successfully updated video
+          schema:
+            properties:
+              id:
+                type: string
+                description: Id of the video
+              url:
+                type: string
+                description: URL of the video
+              duration:
+                type: string
+                description: Total Duration of the video
+              area:
+                type: string
+                description: In-scene area of the video
+              units:
+                type: string
+                description: metric for in-scene video area
+              threshold:
+                type: string
+                description: NFPA Calculated max value for provided occupancy and video area
+              date_created:
+                type: string
+                description: Creation Timestamp of the video
+              last_updated:
+                type: string
+                description: Last Updated timestamp of the Video
+              vid_load_ref:
+                type: integer
+                description: Occupancy type id linked to this video 
+
+    delete:
+      operationId: video.delete
+      tags:
+        - Video
+      summary: Delete a video from the list
+      description: Delete a video
+      parameters:
+        - name: video_id
+          in: path
+          type: integer
+          description: Id of the video to delete
+          required: true
+      responses:
+        200:
+          description: Successfully deleted a video
+  
+  # Snapshot related Endpoints
+  /snapshot:
+    get:
+      operationId: snapshot.read_all
+      tags:
+        - Snapshot
+      summary: Read all snapshots sorted by ID
+      description: Read all snapshots sorted by ID
+      responses:
+        200:
+          description: Successfully read snapshot operation
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+                video_id_ref:
+                  type: string
+                  description: Video ID liked to this snapshot
+
+  # Reads all snapshots for a particular video             
+  /snapshot/{video_id}:
+    get:
+      operationId: snapshot.read_all_from_video
+      tags:
+        - Snapshot
+      summary: Read all snapshots for a given video
+      description: Read all snapshots for a given video
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video to get snapshots
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read snapshots for given ID.
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+                video_id_ref:
+                  type: string
+                  description: Video ID liked to this snapshot
+  
+  # Reads or modifies one snapshot for a given video  
+  /snapshot/{video_id}/{snapshot_id}:
+    get:
+      operationId: snapshot.read_one_from_video
+      tags:
+        - Snapshot
+      summary: Read one snapshot for a given video
+      description: Read one snapshot for a given video
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video 
+          type: integer
+          required: True
+        - name: snapshot_id
+          in: path
+          description: Id of the snapshot
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read snapshot for given ID.
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Id of the snapshot
+              snap:
+                type: string
+                description: Static File Location of the snapshot in jpeg format
+              heatmap:
+                type: string
+                description: Static File Location of the snapshot in jpeg format
+              pred_class:
+                type: string
+                description: Predicted Class from the Classification model
+              pred_count:
+                type: string
+                description: Predicted Count from the Crowd Detection model
+              pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+              date_clicked:
+                type: string
+                description: Timestamp of the snapshot clicked (Datetime format)
+              video_id_ref:
+                type: string
+                description: Video ID liked to this snapshot
+    put:
+      operationId: snapshot.update
+      tags:
+        - Snapshot
+      summary: Update a Snapshot instance
+      description: Update a Snapshot instance
+      parameters:
+        - name: video_id
+          in: path
+          description: Id the video in reference
+          type: integer
+          required: True
+        - name: snapshot_id
+          in: path
+          description: Id the snapshot to update
+          type: integer
+          required: True
+        - name: snapshot
+          in: body
+          schema:
+            type: object
+            required:
+              - id
+            properties:
+              id:
+                type: string
+                description: Id of the snapshot
+              snap:
+                type: string
+                description: Static File Location of the snapshot in jpeg format
+              heatmap:
+                type: string
+                description: Static File Location of the snapshot in jpeg format
+              pred_class:
+                type: string
+                description: Predicted Class from the Classification model
+              pred_count:
+                type: string
+                description: Predicted Count from the Crowd Detection model
+              pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+              date_clicked:
+                type: string
+                description: Timestamp of the snapshot clicked (Datetime format)
+      responses:
+        200:
+          description: Successfully updated video
+          schema:
+            properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+
+    delete:
+      operationId: snapshot.delete
+      tags:
+        - Snapshot
+      summary: Delete a snapshot from the list
+      description: Delete a snapshot from the list
+      parameters:
+        - name: video_id
+          in: path
+          type: integer
+          description: Id of the video in reference
+          required: true
+        - name: snapshot_id
+          in: path
+          type: integer
+          description: Id of the snapshot to delete
+          required: true
+      responses:
+        200:
+          description: Successfully deleted a video
+  
+  # Get last week snapshots for a video
+  /snapshot/get_last_week/{video_id}:
+    get:
+      operationId: snapshot.get_last_week
+      tags:
+        - Snapshot
+      summary: Read all snapshots for one week interval
+      description: Read all snapshots for one week interval
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video to get snapshots
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read snapshots for given ID.
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+                video_id_ref:
+                  type: string
+                  description: Video ID liked to this snapshot
+  
+  # Get last month snapshots for a video
+  /snapshot/get_last_month/{video_id}:
+    get:
+      operationId: snapshot.get_last_month
+      tags:
+        - Snapshot
+      summary: Read all snapshots for one month interval
+      description: Read all snapshots for one month interval
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video to get snapshots
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read snapshots for given ID.
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+                video_id_ref:
+                  type: string
+                  description: Video ID liked to this snapshot
+  
+  # Get last day snapshots for a video
+  /snapshot/get_last_day/{video_id}:
+    get:
+      operationId: snapshot.get_last_day
+      tags:
+        - Snapshot
+      summary: Read all snapshots for one day interval
+      description: Read all snapshots for one day interval
+      parameters:
+        - name: video_id
+          in: path
+          description: Id of the video to get snapshots
+          type: integer
+          required: True
+      responses:
+        200:
+          description: Successfully read snapshots for given ID.
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the snapshot
+                snap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                heatmap:
+                  type: string
+                  description: Static File Location of the snapshot in jpeg format
+                pred_class:
+                  type: string
+                  description: Predicted Class from the Classification model
+                pred_count:
+                  type: string
+                  description: Predicted Count from the Crowd Detection model
+                pred_count_ssdcnet:
+                  type: string
+                  description: Predicted Count from SSDCNet model
+                date_clicked:
+                  type: string
+                  description: Timestamp of the snapshot clicked (Datetime format)
+                video_id_ref:
+                  type: string
+                  description: Video ID liked to this snapshot
+  
+  # Get all data for Occupancytype
+  /occupancytype/all:
+    get:
+      operationId: occupancytype.read_all
+      tags:
+        - Occupancytype
+      summary: Returns all data for occupancy loads
+      description: Returns all data for occupancy loads
+      responses:
+        200:
+          description: Successfully returned occupancy info.
+          schema:
+            type: array
+            items:
+              properties:
+                id:
+                  type: string
+                  description: Id of the Occupancy
+                use:
+                  type: string
+                  description: Occupancy type
+                load_ft2:
+                  type: string
+                  description: Load measure in square feet 
+                load_m2:
+                  type: string
+                  description: Load measure in square meter rounded to one decimal point 
+  

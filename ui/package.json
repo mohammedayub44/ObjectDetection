@@ -1,0 +1,72 @@
+{
+  "name": "crowd-counter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "add": "^2.0.6",
+    "axios": "^0.19.2",
+    "base64-img": "^1.0.4",
+    "bootstrap": "^4.4.1",
+    "capture-video-frame": "^0.1.3",
+    "chart.js": "^2.9.3",
+    "d3": "^5.15.0",
+    "d3-scale": "^3.2.1",
+    "image-thumbnail": "^1.0.7",
+    "node-fetch": "^2.6.0",
+    "or": "^0.2.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap-sidebar": "0.0.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "^16.13.1",
+    "react-image-gallery": "^1.0.5",
+    "react-image-lightbox": "^5.1.1",
+    "react-images": "^1.1.0",
+    "react-native": "^0.62.2",
+    "react-native-elements": "^1.2.7",
+    "react-native-fs": "^2.16.2",
+    "react-native-image-gallery": "^2.1.5",
+    "react-photo-gallery": "^8.0.0",
+    "react-player": "^1.14.2",
+    "react-responsive-carousel": "^3.1.51",
+    "react-scripts": "^3.4.0",
+    "reactstrap": "^8.4.1",
+    "save-file": "^2.3.1",
+    "screenfull": "^5.0.1",
+    "yarn": "^1.22.1"
+  },
+  "scripts": {
+    "start": "PORT=8080 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
+}

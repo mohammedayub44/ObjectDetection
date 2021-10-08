@@ -1,0 +1,4 @@
+# Log files
+logs*
+serving_models*
+torchserve_model_store*

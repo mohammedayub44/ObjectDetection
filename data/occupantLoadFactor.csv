@@ -1,0 +1,38 @@
+Use,ft2_person,m2_person
+Concentrated use: without fixed seating,7,0.65
+Less concentrated use: without fixed seating,15,1.4
+Bench-Type seating,0.666,0.45
+Kitchens,100,9.3
+Library stack areas,100,9.3
+Library reading rooms (net),50,4.6
+Swimming pools (water surface),50,4.6
+Swimming pool decks,30,2.8
+Exercise rooms w/equipment,50,4.6
+Exercise rooms w/o equipment,15,1.4
+Stages(net),15,1.4
+Lighting and access catwalks; galleries; gridirons (net),100,9.3
+Casinos and gaming areas,11,1
+Skating rinks,50,4.6
+Business Use,150,14
+Concentrated Business Use,50,4.6
+Airport traffic control tower observation levels,40,3.7
+Collaboration rooms/spaces ≤450 ft2 (41.8 m2) in area,30,2.8
+Collaboration rooms/spaces >450 ft2 (41.8 m2) in area,15,1.4
+Day-Care Use (net),35,3.3
+Detention and Correctional Use,120,11.1
+Educational Use Classrooms(net),20,1.9
+Shops/laboratories/vocational rooms(net),50,4.6
+Health Care UseInpatient treatmentdepartments,240,22.3
+Sleeping departments,120,11.1
+Ambulatory health care,150,14
+Industrial Use General and high hazard industrial,100,9.3
+Sales area on street floor,30,2.8
+Sales area on two or more street floors,40,3.7
+Sales area on floor below street floor,30,2.8
+Sales area on floors above street floor,60,5.6
+Floors (portions) used only for storage/receiving/shipping and not open to general public,300,27.9
+Hotels and dormitories,200,18.6
+Apartment buildings,200,18.6
+Board and care: large,200,18.6
+storage: mercantile occupancies,300,27.9
+storage: other than mercantile occupancies,500,46.5
