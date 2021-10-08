@@ -1,7 +1,10 @@
 # Data informed Crowd Detection and Management
 Analyzing large crowds from video feeds
 
-[TODO: Insert Application GIF's ]
+
+https://user-images.githubusercontent.com/7122670/136591602-720dd6a5-fca5-42e1-a089-8f75f92f178c.mp4
+
+Front End Created by Fred Macdonald 
 
 ## Motivation
 Large crowds can present some of the most complex challenges faced by safety officers, code officials, and facility managers. 
@@ -166,20 +169,18 @@ Video Capture Controls
 [TODO: Insert heatmaps and Images of various environments/videos]
 
 
-## Project Members
+## Project Specific Members
 
-**Victoria Hutchison** - Fire Protection Research Foundation, NFPA
+**Victoria Hutchison** - Research Project Cordinator, Fire Protection Research Foundation, NFPA
 
-**Rita Fahy** - Applied Research, NFPA
+**Joe Gochal** - Project Director, Data Analytics, NFPA
 
-**Joe Gochal** - Data Analytics, NFPA
+**Mohammed Ayub** - Lead Developer, Data Analytics, NFPA
 
-**Mohammed Ayub** - Data Analytics, NFPA
-
-**Frederick MacDonald III** - Data Analytics, NFPA
+**Frederick MacDonald III** - FrontEnd Developer, Data Analytics, NFPA
 
 ## Acknowledgements (Other Panel Members)
-National Institute of Standards Technology (NIST)
+National Institute of Standards Technology (NIST) for providing the grant.
 
 ## References
 
@@ -196,4 +197,4 @@ National Institute of Standards Technology (NIST)
 5) WorldExpo'10: Cong Zhang, Hongsheng Li, Xiaogang Wang, Xiaokang Yang; [Cross-scene Crowd Counting via Deep Convolutional Neural Networks](cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhang_Cross-Scene_Crowd_Counting_2015_CVPR_paper.pdf)Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2015, pp. 833-841
 
 ## License
-This library is published under the [BSD-3 license](https://github.com/NFPA/Crowd_Detection/blob/master/LICENSE).
+This project is published under the [BSD-3 license](https://github.com/mohammedayub44/ObjectDetection/blob/main/LICENSE).
