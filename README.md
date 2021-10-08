@@ -4,7 +4,7 @@ Analyzing large crowds from video feeds
 
 https://user-images.githubusercontent.com/7122670/136591602-720dd6a5-fca5-42e1-a089-8f75f92f178c.mp4
 
-Front End Created by Fred Macdonald 
+Front End Created by Fred MacDonald 
 
 ## Motivation
 Large crowds can present some of the most complex challenges faced by safety officers, code officials, and facility managers. 
