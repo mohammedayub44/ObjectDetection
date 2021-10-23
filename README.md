@@ -28,13 +28,13 @@ Real time crowd counting can be thought of as estimating the number of people in
 We take a two step apporaching this calculation.  First, we initially classify the image of the crowd as falling into one or two categorys: a sparse crowd or a dense crowd. We then apply a CNN model to count the number of people, with the specific model used having been fine-tuned to count eithr sparse or dense crowds.
 Although the first step in our process is optional, we have found the predicted count is much closer to ground truth when adding in this step. (TODO: Add test results section)
 
-Various Open Source data repositories with labelled crowd images/videos has been used to train, validate and test this application. See [Datasets](https://github.com/NFPA/Crowd_Detection/blob/development/docs/Datasets.md) for more details.
+Various Open Source data repositories with labelled crowd images/videos has been used to train, validate and test this application. See [Datasets](docs/Datasets.md) for more details.
 
 For the first classfication step, we use the [VGG16 model](https://arxiv.org/pdf/1409.1556.pdf) as the base and use [Transfer Learning](https://en.wikipedia.org/wiki/Transfer_learning) approaches to fine tune the model on large crowd images. This is done by changing the last softmax layer to match the output categories. [More Details](https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/). For second step of crowd counting, we pretrained models from teh  [Congested Scene Recognition (CSRNet)](https://arxiv.org/pdf/1802.10062.pdf) family. CSRNet modle are estimation models that aim to generate high-quality density maps by using [dilated convolutions](http://vladlen.info/papers/dilated-convolutions.pdf). They also uses VGG16 as base layers because of its strong transfer learning ability and flexbility to modify the architecture without adding much complexity to training. 
 
 In addition to CSRNet models originally published in 2018, we also used more recent crowd counting model, the [Supervised Spatial Divide and Conquer (SSDCNet) model](https://arxiv.org/pdf/2001.01886.pdf) (May 2020).  Our initial analysis suggests that the SSDCNet models may yield slightly better performance on high density crowd images. 
 
-The prototype application is built using a simple Python backend and ReactJS frontend. We choose these technologies because of model compatibility, fast prototyping and interactive visualizations. For serving the CNN models we use a combination of [Tensorflow Server](https://www.tensorflow.org/tfx/guide/serving) and [TorchServe](https://github.com/pytorch/serve) as Classification/CSRNet models are in Tensorflow format and SSDCNet models are Pytorch format. For more details on modeling see [Training and Serving](https://github.com/NFPA/Crowd_Detection/blob/development/docs/Model%20Creation%20and%20Serving.md) models and for backend setup see [Database Details](https://github.com/NFPA/Crowd_Detection/blob/development/docs/Database%20and%20Swagger%20Details.md)
+The prototype application is built using a simple Python backend and ReactJS frontend. We choose these technologies because of model compatibility, fast prototyping and interactive visualizations. For serving the CNN models we use a combination of [Tensorflow Server](https://www.tensorflow.org/tfx/guide/serving) and [TorchServe](https://github.com/pytorch/serve) as Classification/CSRNet models are in Tensorflow format and SSDCNet models are Pytorch format. For more details on modeling see [Training and Serving](docs/Model%20Creation%20and%20Serving.md) models and for backend setup see [Database Details](docs/Database%20and%20Swagger%20Details.md)
 
 
 
@@ -82,7 +82,7 @@ Snapshots location - `/usr/src/app/images/snapshots`
 
 Application Database location - `/usr/src/app/service/crowd_counter.db` 
 
-See [Database and Swagger Details](https://github.com/NFPA/Crowd_Detection/blob/development/docs/Database%20and%20Swagger%20Details.md) for more info. on `crowd_counter.db`
+See [Database and Swagger Details](docs/Database%20and%20Swagger%20Details.md) for more info. on `crowd_counter.db`
 
 ### Option 2: Local Deployment 
 
